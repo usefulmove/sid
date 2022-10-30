@@ -12,6 +12,8 @@ object Sid:
     //.foreach(println)
 
     /* process stream */
+    val fileOutput = fileContents
+      .map(_.replace("unction", "raction"))
 
     /* write and close file */
 
@@ -21,6 +23,6 @@ object Sid:
         for (line <- lines) bw.write(line + "\n")
         bw.close()
 
-    writeFile("/home/dedmonds/repos/sid/file.out", fileContents)
+    writeFile("/home/dedmonds/repos/sid/file.out", fileOutput)
 
     println("  done")
